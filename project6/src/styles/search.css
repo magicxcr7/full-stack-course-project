@@ -1,0 +1,26 @@
+.search {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 3rem 0rem;
+}
+
+.search input,
+.search button {
+  font-size: 2rem;
+  padding: 0.25rem;
+  border: 3px solid #2b002b;
+  cursor: pointer;
+}
+
+.search button {
+  background-color: #490149;
+  color: white;
+}
+/*# sourceMappingURL=search.css.map */
