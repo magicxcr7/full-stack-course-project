@@ -24,11 +24,15 @@ router.post(
     failureFlash: "Wrong email or password.",
   }),
   (req, res) => {
-    if (res.session.returnTo) {
-      let newPath = res.session.returnTo;
-      req.session.returnTo = "";
-      res.redirect(newPath); // newPath: /profile/path
-    } else {
+    try {
+      if (res.session.returnTo) {
+        let newPath = res.session.returnTo;
+        req.session.returnTo = "";
+        res.redirect(newPath); // newPath: /profile/path
+      } else {
+        res.redirect("/profile");
+      }
+    } catch {
       res.redirect("/profile");
     }
   }
@@ -86,11 +90,15 @@ router.get(
 
 router.get("/google/redirect", passport.authenticate("google"), (req, res) => {
   // res.redirect("/profile"); // redirect to profile
-  if (res.session.returnTo) {
-    let newPath = res.session.returnTo;
-    req.session.returnTo = "";
-    res.redirect(newPath);
-  } else {
+  try {
+    if (res.session.returnTo) {
+      let newPath = res.session.returnTo;
+      req.session.returnTo = "";
+      res.redirect(newPath);
+    } else {
+      res.redirect("/profile");
+    }
+  } catch (error) {
     res.redirect("/profile");
   }
 });
