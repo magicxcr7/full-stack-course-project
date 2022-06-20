@@ -1,0 +1,10 @@
+{
+  // for react import error
+  "javascript.validate.enable": false,
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact",
+    "typescript": "typescriptreact"
+  },
+  "plugins": ["react"],
+  "extends": ["eslint:all", "plugin:react/all"]
+}
